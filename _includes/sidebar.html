@@ -18,8 +18,8 @@
           </a>
         </div>
         <div>
-          <a href="{{ post.url | relative_url }}" class="text-decoration-none text-dark link-success">
-            <small class="fw-semibold d-block text-dark link-success">
+          <a href="{{ post.url | relative_url }}" class="text-decoration-none text-dark link-danger">
+            <small class="fw-semibold d-block text-dark link-danger">
               {{ post.title | truncate: 50 }}
             </small>
           </a>
@@ -75,7 +75,7 @@
         {% for category in sorted_categories %}
         {% if category[0] != "" %}
         <a href="/categories/#{{ category[0] | slugify | downcase }}"
-          class="small text-primary link-success text-decoration-none border border-1 rounded-0 text-capitalize px-2 py-1 rounded">
+          class="small text-primary link-danger text-decoration-none border border-1 rounded-0 text-capitalize px-2 py-1 rounded">
           {{ category[0] }}
         </a>
         {% endif %}

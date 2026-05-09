@@ -24,4 +24,4 @@ All wallpapers are available for **free download**, allowing you to personalize 
 
 Enjoy browsing and find the perfect wallpaper for your screen.
 
-🔗 Visit: [Maginve](https://maginve.github.io/)
+🔗 Visit: [Maginve](https://maginve.com/)

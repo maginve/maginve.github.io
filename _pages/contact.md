@@ -15,8 +15,8 @@ Have a question, suggestion, or feedback? Feel free to get in touch. We always a
 
 ###### Get in Touch
 
-- 📧 Email: [support@maginve.github.io](https://maginve.github.io/)
-- 🌐 Website: [Maginve](https://maginve.github.io/)
+- 📧 Email: [support@maginve.com](https://maginve.com/)
+- 🌐 Website: [Maginve](https://maginve.com/)
 
 ###### Response Time
 

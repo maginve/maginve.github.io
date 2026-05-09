@@ -2,7 +2,7 @@
 
 A curated collection of high-quality **HD, Full HD, and 4K wallpapers** designed to enhance your screen with beautiful and modern visuals.
 
-🌐 Live Site: [Maginve](https://maginve.github.io/) 
+🌐 Live Site: [Maginve](https://maginve.com/) 
 
 ---
 
@@ -59,8 +59,8 @@ New wallpapers are added regularly to keep the collection fresh and trending.
 
 For suggestions, feedback, or inquiries:
 
-- 📧 Email: [support@maginve.github.io](https://maginve.github.io/) 
-- 🌐 Website: [Maginve](https://maginve.github.io/) 
+- 📧 Email: [support@maginve.com](https://maginve.com/) 
+- 🌐 Website: [Maginve](https://maginve.com/) 
 
 ---
 

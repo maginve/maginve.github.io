@@ -1,10 +1,10 @@
 # Site settings
 title: MAGINVE
-email: admin@maginve.github.io
+email: admin@maginve.com
 description: >
   A collection of high-quality HD, Full HD, and 4K wallpapers featuring nature landscapes, mountains, forests, beaches, sunsets, city views, and aesthetic designs.
 
-url: "https://maginve.github.io"
+url: "https://maginve.com"
 baseurl: "/"
 
 timezone: Asia/Jakarta
@@ -18,7 +18,7 @@ built-by: Maginve
 
 copyright:
   name: Maginve
-  link: "https://maginve.github.io"
+  link: "https://maginve.com"
 
 markdown: kramdown
 permalink: /:title/

@@ -15,7 +15,7 @@ layout: default
 
       <div class="text-muted small d-flex align-items-center gap-2 flex-wrap">
         {% if page.categories.size > 0 %}
-        <span class="text-success link-primary text-capitalize fw-semibold text-decoration-none">
+        <span class="text-danger link-primary text-capitalize fw-semibold text-decoration-none">
           {{ page.categories | first }}
         </span>
         {% endif %}
@@ -77,7 +77,7 @@ layout: default
   <!-- SHARE -->
   <div class="share mb-5">
     <h6 class="fw-bold text-uppercase mb-3">
-      <span class="text-success">/</span> SHARE <span class="text-success">/</span>
+      <span class="text-danger">/</span> SHARE <span class="text-danger">/</span>
     </h6>
 
     <div class="d-flex flex-wrap gap-2">
@@ -121,7 +121,7 @@ layout: default
 
       {% if page.previous.url %}
       <li class="page-item">
-        <a class="page-link rounded-0 bg-light text-primary link-success" href="{{ page.previous.url | relative_url }}">
+        <a class="page-link rounded-0 bg-light text-primary link-danger" href="{{ page.previous.url | relative_url }}">
           &laquo; {{ page.previous.title | truncate: 40 }}
         </a>
       </li>
@@ -129,7 +129,7 @@ layout: default
 
       {% if page.next.url %}
       <li class="page-item ms-auto">
-        <a class="page-link rounded-0 bg-light  text-primary link-success" href="{{ page.next.url | relative_url }}">
+        <a class="page-link rounded-0 bg-light  text-primary link-danger" href="{{ page.next.url | relative_url }}">
           {{ page.next.title | truncate: 40 }} &raquo;
         </a>
       </li>
@@ -142,7 +142,7 @@ layout: default
   <div class="related-posts mb-5">
 
     <h6 class="fw-bold text-uppercase mb-3">
-      <span class="text-success">/</span> RELATED POSTS <span class="text-success">/</span>
+      <span class="text-danger">/</span> RELATED POSTS <span class="text-danger">/</span>
     </h6>
 
     <div class="row g-3">
@@ -172,13 +172,13 @@ layout: default
 
       {% if relatedCount < maxRelated %}
       <div class="col-6 col-md-3">
-        <a href="{{ post.url | relative_url }}" class="text-decoration-none text-success link-danger">
+        <a href="{{ post.url | relative_url }}" class="text-decoration-none text-danger link-danger">
           <!-- IMAGE -->
           <img class="img-fluid rounded-0 mb-2"
             src="{% if post.image %}{{ post.image | relative_url }}{% else %}{{ '/assets/images/default.jpg' | relative_url }}{% endif %}"
             style="aspect-ratio: 16/9; object-fit: cover;" loading="lazy" alt="{{ post.title }}" />
           <!-- TITLE -->
-          <small class="d-block fw-bold text-success link-danger">
+          <small class="d-block fw-bold text-danger link-danger">
             {{ post.title | truncate: 45 }}
           </small>
         </a>
@@ -200,13 +200,13 @@ layout: default
       {% for post in site.posts limit:8 %}
       {% if post.url != page.url %}
       <div class="col-6 col-md-3">
-        <a href="{{ post.url | relative_url }}" class="text-decoration-none text-success link-danger">
+        <a href="{{ post.url | relative_url }}" class="text-decoration-none text-danger link-danger">
           <!-- IMAGE -->
           <img class="img-fluid rounded-0 mb-2"
             src="{% if post.image %}{{ post.image | relative_url }}{% else %}{{ '/assets/images/default.jpg' | relative_url }}{% endif %}"
             style="aspect-ratio: 16/9; object-fit: cover;" loading="lazy" alt="{{ post.title }}" />
           <!-- TITLE -->
-          <small class="d-block fw-bold text-success link-danger">
+          <small class="d-block fw-bold text-danger link-danger">
             {{ post.title | truncate: 45 }}
           </small>
         </a>

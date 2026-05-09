@@ -74,7 +74,7 @@ layout: default
 
             {% if post.categories.size > 0 %}
             <a href="{{ '/categories/' | append: post.categories.first | append: '/' | relative_url }}"
-              class="text-success small text-capitalize fw-semibold text-decoration-none d-block mb-2">
+              class="text-danger small text-capitalize fw-semibold text-decoration-none d-block mb-2">
               {{ post.categories | first }}
             </a>
             {% endif %}

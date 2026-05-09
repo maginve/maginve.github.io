@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maginve.github.io/sitemap.xml
+Sitemap: https://maginve.com/sitemap.xml
