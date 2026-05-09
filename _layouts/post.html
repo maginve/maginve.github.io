@@ -14,41 +14,34 @@ layout: default
       </h1>
 
       <div class="text-muted small d-flex align-items-center gap-2 flex-wrap">
-
         {% if page.categories.size > 0 %}
-        <a href="{{ '/categories/' | append: page.categories.first | append: '/' | relative_url }}"
-          class="text-danger text-capitalize fw-semibold text-decoration-none">
-
+        <span class="text-success link-primary text-capitalize fw-semibold text-decoration-none">
           {{ page.categories | first }}
-
-        </a>
+        </span>
         {% endif %}
-
         <span>•</span>
-
         <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
           {{ page.date | date: "%B %-d, %Y" }}
         </time>
-
         {% if page.author %}
         <span>•</span>
-
-        <span class="text-capitalize text-muted" itemprop="author">
+        <span class="text-capitalize text-muted link-danger" itemprop="author">
           {{ page.author }}
         </span>
         {% endif %}
-
       </div>
+
     </header>
 
     <!-- IMAGE -->
-    {% if page.image %}
-    <div class="mb-4">
+    <div class="mb-4 text-center text-muted">
       <a href="https://aridjaya.com">
-        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="img-fluid w-100" loading="lazy">
+        <img
+          src="{% if page.image %}{{ page.image | relative_url }}{% else %}{{ '/assets/images/default.jpg' | relative_url }}{% endif %}"
+          alt="{{ page.title }}" class="img-fluid w-100" loading="lazy">
       </a>
+      <small class="text-muted">{{ page.title }}</small>
     </div>
-    {% endif %}
 
     <!-- AD -->
     <div class="my-4 text-center overflow-hidden">
@@ -56,7 +49,7 @@ layout: default
     </div>
 
     <!-- CONTENT -->
-    <div class="mb-4 lh-lg">
+    <div class="mb-4 lh-base">
       {% assign parts = content | split: '</p>' %}
       {% for p in parts %}
       {{ p }}</p>
@@ -69,7 +62,7 @@ layout: default
       <div class="my-4 text-center overflow-hidden">
         {% include ad.html %}
       </div>
-      
+
       {% endif %}
       {% endfor %}
     </div>
@@ -77,14 +70,14 @@ layout: default
   </article>
 
   <!-- AD -->
-  <div class="my-4 text-center overflow-hidden">
-    {% include adnativ.html %}
+  <div class="adnativ my-4 text-center overflow-hidden">
+    {% include ad.html %}
   </div>
 
   <!-- SHARE -->
   <div class="share mb-5">
     <h6 class="fw-bold text-uppercase mb-3">
-      <span class="text-danger">/</span> SHARE <span class="text-danger">/</span>
+      <span class="text-success">/</span> SHARE <span class="text-success">/</span>
     </h6>
 
     <div class="d-flex flex-wrap gap-2">
@@ -128,7 +121,7 @@ layout: default
 
       {% if page.previous.url %}
       <li class="page-item">
-        <a class="page-link rounded-0 bg-light" href="{{ page.previous.url | relative_url }}">
+        <a class="page-link rounded-0 bg-light text-primary link-success" href="{{ page.previous.url | relative_url }}">
           &laquo; {{ page.previous.title | truncate: 40 }}
         </a>
       </li>
@@ -136,7 +129,7 @@ layout: default
 
       {% if page.next.url %}
       <li class="page-item ms-auto">
-        <a class="page-link rounded-0 bg-light" href="{{ page.next.url | relative_url }}">
+        <a class="page-link rounded-0 bg-light  text-primary link-success" href="{{ page.next.url | relative_url }}">
           {{ page.next.title | truncate: 40 }} &raquo;
         </a>
       </li>
@@ -149,7 +142,7 @@ layout: default
   <div class="related-posts mb-5">
 
     <h6 class="fw-bold text-uppercase mb-3">
-      <span class="text-danger">/</span> RELATED POSTS <span class="text-danger">/</span>
+      <span class="text-success">/</span> RELATED POSTS <span class="text-success">/</span>
     </h6>
 
     <div class="row g-3">
@@ -179,17 +172,15 @@ layout: default
 
       {% if relatedCount < maxRelated %}
       <div class="col-6 col-md-3">
-        <a href="{{ post.url | relative_url }}" class="text-decoration-none text-danger">
-
-          {% if post.image %}
-          <img class='img-fluid rounded-0 mb-2 ' src="{{ post.image | relative_url }}"
-            style="aspect-ratio: 16/9; object-fit: cover;" loading="lazy" />
-          {% endif %}
-
-          <small class="d-block fw-bold">
+        <a href="{{ post.url | relative_url }}" class="text-decoration-none text-success link-danger">
+          <!-- IMAGE -->
+          <img class="img-fluid rounded-0 mb-2"
+            src="{% if post.image %}{{ post.image | relative_url }}{% else %}{{ '/assets/images/default.jpg' | relative_url }}{% endif %}"
+            style="aspect-ratio: 16/9; object-fit: cover;" loading="lazy" alt="{{ post.title }}" />
+          <!-- TITLE -->
+          <small class="d-block fw-bold text-success link-danger">
             {{ post.title | truncate: 45 }}
           </small>
-
         </a>
       </div>
 
@@ -209,11 +200,15 @@ layout: default
       {% for post in site.posts limit:8 %}
       {% if post.url != page.url %}
       <div class="col-6 col-md-3">
-        <a href="{{ post.url | relative_url }}" class="text-decoration-none text-danger">
-          {% if post.image %}
-          <img class="img-fluid rounded-0 mb-2" src="{{ post.image | relative_url }}">
-          {% endif %}
-          <small>{{ post.title | truncate: 45 }}</small>
+        <a href="{{ post.url | relative_url }}" class="text-decoration-none text-success link-danger">
+          <!-- IMAGE -->
+          <img class="img-fluid rounded-0 mb-2"
+            src="{% if post.image %}{{ post.image | relative_url }}{% else %}{{ '/assets/images/default.jpg' | relative_url }}{% endif %}"
+            style="aspect-ratio: 16/9; object-fit: cover;" loading="lazy" alt="{{ post.title }}" />
+          <!-- TITLE -->
+          <small class="d-block fw-bold text-success link-danger">
+            {{ post.title | truncate: 45 }}
+          </small>
         </a>
       </div>
       {% endif %}

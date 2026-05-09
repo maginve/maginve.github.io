@@ -13,8 +13,9 @@ layout: default
 
   <div class="featured-post position-relative overflow-hidden mb-4" style="aspect-ratio: 16/9;">
     <a href="{{ featured_post.url | relative_url }}" class="text-decoration-none text-white">
-      <img src="{{ featured_post.image | relative_url }}" alt="{{ featured_post.title }}"
-        class="img-fluid w-100 featured-img">
+      <img
+        src="{% if featured_post.image %}{{ featured_post.image | relative_url }}{% else %}{{ '/assets/images/default.jpg' | relative_url }}{% endif %}"
+        alt="{{ featured_post.title }}" class="img-fluid w-100 featured-img">
       <div class="featured-overlay">
         {% if featured_post.categories %}
         <span class="featured-label">
@@ -54,16 +55,17 @@ layout: default
       <div class="card border-0 rounded-0 h-100 shadow-none">
         <a href="{{ post.url | relative_url }}" class="text-decoration-none text-dark">
 
-          {% if post.image %}
           <div class="overflow-hidden position-relative">
 
             {% assign post_time = post.date | date: "%s" %}
             {% assign diff = now | minus: post_time %}
 
-            <img src="{{ post.image | relative_url }}" class="card-img rounded-0"
-              style="aspect-ratio: 16/9; object-fit: cover;" loading="lazy">
+            <img
+              src="{% if post.image %}{{ post.image | relative_url }}{% else %}{{ '/assets/images/default.jpg' | relative_url }}{% endif %}"
+              class="card-img rounded-0" style="aspect-ratio: 16/9; object-fit: cover;" loading="lazy"
+              alt="{{ post.title }}">
+
           </div>
-          {% endif %}
 
           <div class="card-body py-3 px-0">
             <h4 class="fw-bold mb-2 text-capitalize">
@@ -72,7 +74,7 @@ layout: default
 
             {% if post.categories.size > 0 %}
             <a href="{{ '/categories/' | append: post.categories.first | append: '/' | relative_url }}"
-              class="text-danger small text-capitalize fw-semibold text-decoration-none d-block mb-2">
+              class="text-success small text-capitalize fw-semibold text-decoration-none d-block mb-2">
               {{ post.categories | first }}
             </a>
             {% endif %}
@@ -83,9 +85,7 @@ layout: default
           </div>
 
         </a>
-
       </div>
-
     </div>
 
     {% endif %}
@@ -97,17 +97,12 @@ layout: default
     </div>
     {% endif %}
   </div>
-  
+
 </div>
 
 <!-- SIDEBAR -->
 <div class="col-lg-4">
   {% include sidebar.html %}
-</div>
-
-<!-- AD -->
-<div class="my-4 text-center overflow-hidden">
-  {% include ad.html %}
 </div>
 
 <!-- PAGINATION -->
