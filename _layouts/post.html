@@ -178,7 +178,7 @@ layout: default
             src="{% if post.image %}{{ post.image | relative_url }}{% else %}{{ '/assets/images/default.jpg' | relative_url }}{% endif %}"
             style="aspect-ratio: 16/9; object-fit: cover;" loading="lazy" alt="{{ post.title }}" />
           <!-- TITLE -->
-          <small class="d-block fw-bold text-danger link-danger">
+          <small class="d-block fw-bold text-danger link-primary">
             {{ post.title | truncate: 45 }}
           </small>
         </a>
@@ -206,7 +206,7 @@ layout: default
             src="{% if post.image %}{{ post.image | relative_url }}{% else %}{{ '/assets/images/default.jpg' | relative_url }}{% endif %}"
             style="aspect-ratio: 16/9; object-fit: cover;" loading="lazy" alt="{{ post.title }}" />
           <!-- TITLE -->
-          <small class="d-block fw-bold text-danger link-danger">
+          <small class="d-block fw-bold text-danger link-primary">
             {{ post.title | truncate: 45 }}
           </small>
         </a>
